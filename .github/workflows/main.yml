@@ -1,0 +1,15 @@
+name: Check backend workflow
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout back repo
+        uses: actions/checkout@v4
+
+      - name: Build with Maven
+        run: mvn clean verify 
