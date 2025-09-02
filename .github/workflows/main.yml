@@ -17,4 +17,10 @@ jobs:
             java-version: '21'
             distribution: 'temurin'
       - name: Build with Maven
+        env:
+          SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/testdb
+          SPRING_DATASOURCE_USERNAME: root
+          SPRING_DATASOURCE_PASSWORD: root
         run: mvn clean verify 
+
+        
